@@ -10,7 +10,7 @@ Reverse Engineering • Programming • Patching • Game Improvements • DLL C
 
 [![Total Downloads](https://img.shields.io/github/downloads/Chip-Biscuit/Star-Wars-Episode-I-Phantom-Menace-PC-Stand-Alone-Fix-Files/total?label=Total%20Downloads&style=for-the-badge)](https://github.com/Chip-Biscuit/Star-Wars-Episode-I-Phantom-Menace-PC-Stand-Alone-Fix-Files/releases/tag/PhantomAlone)
 
-<sub>click the Total Downloads button above to take you to the releases page with the instructions and download scripts.zip at the bottom  of the page</sub>
+<sub>click the Total Downloads button above to take you to the releases page with the instructions and download [scripts.zip](https://github.com/Chip-Biscuit/Star-Wars-Episode-I-Phantom-Menace-PC-Stand-Alone-Fix-Files/releases/download/PhantomAlone/scripts.zip) at the bottom  of the page</sub>
 
 </div>
 
