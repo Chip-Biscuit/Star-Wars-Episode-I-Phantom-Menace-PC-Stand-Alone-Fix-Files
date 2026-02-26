@@ -1,112 +1,401 @@
-🎮 Phantom Menace PC – Core Patch
+<div align="center">
 
-Modern Engine Fixes, FOV System & 60 FPS Mod
+# 🎮 Game Specific Patches & DLL Wrappers  
 
-created and maintained by Chip
+***created and maintained by***
 
-Reverse Engineering • Engine Research • Patching • Preservation
+[![Chip-Biscuit Website](https://img.shields.io/badge/Chip--Biscuit-Website-blue?style=for-the-badge)](https://chip-biscuit.github.io/)
 
-------------------------------------------------------------------------
+Reverse Engineering • Programming • Patching • Game Improvements • DLL Creation 
 
-About This Project
 
-This project provides a core engine patch for Star Wars: Episode I – The
-Phantom Menace (PC).
 
-It focuses on: - Reverse-engineered engine fixes - Runtime patching -
-Gameplay improvements - Modern system compatibility - Preservation of
-the original PC version
+<sub>click the Total Downloads button above to take you to the releases page with the instructions and download Chips64bit_ThePhantomMenaceInstaller.exe at the bottom  of the page</sub>
 
-This release contains only Chip’s patches. Third-party tools are not
-bundled and must be downloaded from their original authors.
+</div>
+
+# Phantom Menace PC – Core Patch
+## Modern Engine Fixes, FOV System & 60 FPS Mod
 
 ------------------------------------------------------------------------
 
-Legal Notice
+# ABOUT THIS PROJECT
+
+This project provides a core engine patch for
+Star Wars: Episode I – The Phantom Menace (PC).
+
+Focus:
+- Reverse-engineered engine fixes
+- Runtime patching
+- Gameplay improvements
+- Modern compatibility
+- Preservation of the original PC version
+
+This release contains ONLY Chip’s patches.
+
+Third-party tools are required and must be installed separately.
+
+------------------------------------------------------------------------
+
+# LEGAL NOTICE
 
 You must legally own an original retail copy of the game.
 
-This patch: - does NOT include game data - does NOT distribute
-copyrighted assets - modifies the game at runtime only
+This patch:
+- does NOT include game data
+- does NOT distribute copyrighted assets
+- modifies the game at runtime only
 
 ------------------------------------------------------------------------
 
-What This Patch Does
+# WHAT THIS PATCH DOES
 
--   60 FPS modification (original game is 30 FPS) Elisha wrapper should be used to make this fully stable.
--   Runtime FOV system
--   Engine timing fixes
--   Stability adjustments
--   Modern Windows compatibility improvements
+Core engine improvements:
 
-------------------------------------------------------------------------
+- 60 FPS modification (original game is 30 FPS)
+- Runtime FOV toggle system
+- Engine timing fixes
+- Stability adjustments
+- Modern Windows compatibility improvements
 
-Requirements
+IMPORTANT:
 
-Requires Ultimate ASI Loader.
-
-Download: https://github.com/ThirteenAG/Ultimate-ASI-Loader
-
-Rename: dinput8.dll → DINPUT.dll
-
-Place DINPUT.dll next to WMAIN.exe.
+DXWrapper is strongly recommended for stable frame pacing and smooth
+performance when using the 60 FPS patch.
 
 ------------------------------------------------------------------------
 
-Installation
+# REQUIRED INSTALLATION ORDER
 
-1.  Extract this release
-2.  Copy the scripts folder into the game directory
-3.  Launch using WMAIN.exe
+Install components in this order.
 
 ------------------------------------------------------------------------
 
-FOV System
+# 1) ThirteenAG — Ultimate ASI Loader (REQUIRED)
+
+Required to load the core patch.
+
+Download:
+https://github.com/ThirteenAG/Ultimate-ASI-Loader
+
+Steps:
+
+
+1. Go to the website above navigate to the releases page download (Ultimate-ASI-Loader.zip)
+2. Extract archive
+3. Locate:
+   dinput8.dll
+4. Rename:
+   dinput8.dll → DINPUT.dll
+5. Copy DINPUT.dll into the game directory (next to WMAIN.exe)
+
+------------------------------------------------------------------------
+
+# 2) Chip Core Patch
+
+1. Extract this release
+2. Copy the "scripts" folder into the game directory
+3. Launch using WMAIN.exe
+
+The patch loads automatically at runtime.
+
+------------------------------------------------------------------------
+
+# 3) elishacloud — DXWrapper (REQUIRED FOR STABLE 60 FPS and error "could not initialize graphics hardware" on AMD graphics)
+
+DXWrapper provides:
+
+- Stable frame pacing for the 60 FPS patch
+- Anti-aliasing
+- Anisotropic filtering
+- Borderless fullscreen mode
+- Modern GPU compatibility (AMD / NVIDIA / Intel)
+- And much more
+
+Download:
+https://github.com/elishacloud/dxwrapper
+
+INSTALLATION
+
+1. Go to the releases page
+2. Download the archive (dx7.games.zip)
+3. Extract the archive
+4. Copy the following files into the game directory
+   (next to WMAIN.exe):
+
+   ddraw.dll
+   dxwrapper.dll
+   dxwrapper.ini
+
+5. Open dxwrapper.ini in a text editor.
+6. Locate the [d3d9] section.
+7. Ensure it is configured exactly as follows:
+```
+[d3d9]
+AnisotropicFiltering       = 1
+AntiAliasing               = 1
+EnableMultisamplingATOC    = 0
+EnvironmentCubeMapFix      = 0
+DepthBiasFactor            = 0
+DepthBiasDropOffValue      = 0
+EnableVSync                = 0
+ForceVsyncMode             = 0
+ShowFPSCounter             = 0
+OverrideRefreshRate        = 0
+LimitDisplayModeCount      = 0
+CustomDisplayWidth         = 0
+CustomDisplayHeight        = 0
+LimitPerFrameFPS           = 0
+EnableWindowMode           = 0
+WindowModeBorder           = 0
+WindowModeGammaShader      = 0
+SetInitialWindowPosition   = 0
+InitialWindowPositionLeft  = 0
+InitialWindowPositionTop   = 0
+FullscreenWindowMode       = 1
+ForceExclusiveFullscreen   = 0
+ForceMixedVertexProcessing = 0
+ForceSystemMemVertexCache  = 0
+UseShadowBackbuffer        = 0
+OverrideStencilFormat      = 0
+FlipEx                     = 0
+SetSwapEffectShim          = 0
+DisableMaxWindowedMode     = 0
+GraphicsHybridAdapter      = 0
+```
+6. Save the file.
+7. Launch the game.
+
+IMPORTANT NOTES
+
+- FullscreenWindowMode = 1 enables borderless fullscreen.
+- AntiAliasing and AnisotropicFiltering improve visual quality.
+- VSync is disabled to prevent timing conflicts with the 60 FPS patch.
+
+DXWrapper is considered part of the modern configuration
+for stable performance.
+
+dgVoodoo is NOT recommended:
+
+- introduces additional overhead
+- reduces performance
+- interferes with frame timing
+- negatively impacts 60 FPS stability
+
+------------------------------------------------------------------------
+
+# 4) UCyborg — Legacy D3D Resolution Hack (REQUIRED for resolutions above 1920×1080)
+
+Download:
+https://github.com/UCyborg/LegacyD3DResolutionHack
+
+Steps:
+
+1. Extract archive
+2. Copy into game directory:
+   d3dim.dll
+   d3dim700.dll
+   obi.ini
+3. Edit obi.ini to configure resolution
+
+------------------------------------------------------------------------
+
+# 5) kcat — DSOAL (OPTIONAL)
+
+Restores EAX environmental audio on modern Windows.
+
+Download:
+https://github.com/kcat/dsoal
+
+Steps:
+
+1. Extract archive
+2. Navigate to:
+   DSOAL+HRTF → win32
+3. Copy ALL contents into the game directory
+4. Launch game
+5. Enable EAX in sound settings in game
+
+------------------------------------------------------------------------
+
+# 6) samuelgr — Xidi (RECOMMENDED)
+
+Provides modern XInput controller support and remapping.
+
+Download:
+https://github.com/samuelgr/Xidi
+
+The game is 32-bit. Do NOT use the x64 version.
+
+# STANDARD INSTALL
+
+1. Extract the Xidi archive.
+2. Open the "Win32" folder.
+3. Copy:
+
+   winmm.dll
+
+   into the game directory (next to WMAIN.exe).
+
+4. Create a new text file in the game directory.
+5. Rename it to:
+
+   Xidi.ini
+
+   (Ensure it is not saved as Xidi.ini.txt)
+
+6. Open Xidi.ini and paste the following:
+```
+[Mapper]
+Type                = PhantomMenace
+
+[CustomMapper:PhantomMenace]
+StickLeftX          = Axis(X)
+StickLeftY          = Axis(Y)
+StickRightX         = Split( Compound( Keyboard(LAlt), Keyboard(RIGHT) ), Compound( Keyboard(LAlt), Keyboard(LEFT) ) )
+StickRightY         = null
+ButtonA             = Button(1)
+ButtonB             = Button(2)
+ButtonX             = Button(3)
+ButtonY             = Button(4)
+ButtonLB            = Button(5)
+ButtonRB            = Button(6)
+TriggerLT           = Button(7)
+TriggerRT           = Button(8)
+ButtonBack          = Keyboard(F1)
+ButtonStart         = Keyboard(ESCAPE)
+ButtonLS            = Button(11)
+ButtonRS            = Button(12)
+DpadUp              = Pov(Up)
+DpadDown            = Pov(Down)
+DpadLeft            = Pov(Left)
+DpadRight           = Pov(Right)
+```
+7. Save the file.
+8. Launch the game.
+
+# Controller Notes:
+
+- Start opens the in-game menu.
+- roll on right analogue stick as in the ps1 version
+- Back toggles FOV (mapped to F1).
+- If you change the FOV hotkey inside scripts/chip.ini,
+  you must update ButtonBack inside Xidi.ini to match.
+
+
+# FALLBACK METHOD (Some Systems)
+
+If controller fails to initialise:
+
+1. Rename:
+   winmm.dll → winm2.dll
+
+2. Open WMAIN.exe in a hex editor.
+
+3. Search:
+   winmm.dll
+
+4. Replace with:
+   winm2.dll
+
+IMPORTANT:
+Do NOT change string length.
+It must remain 8 characters.
+
+5. Save file.
+6. Ensure winm2.dll and Xidi.ini are in the game directory.
+7. Launch game.
+
+------------------------------------------------------------------------
+
+# 7) Launching the Game
+
+Play the game using the WMAIN.exe or make a shorcut to WMAIN.exe on your desktop.
+
+------------------------------------------------------------------------
+# FOV SYSTEM
 
 Default hotkey: F1
 
-Change in scripts/chip.ini
+To apply FOV changes:
 
-To apply changes: 1. Press hotkey 2. Press ESC 3. Close menu
+1. Press FOV hotkey
+2. Press ESC
+3. Close menu
 
-------------------------------------------------------------------------
+FOV updates after camera refresh.
 
-Optional Enhancements (Not Included)
-
-Graphics — dxwrapper https://github.com/elishacloud/dxwrapper
-
-Resolution — LegacyD3D
-https://github.com/UCyborg/LegacyD3DResolutionHack
-
-Audio — DSOAL https://github.com/kcat/dsoal
-
-Controller — Xidi https://github.com/samuelgr/Xidi
+Before level transitions:
+- revert to original FOV
+- allow level load
+- reapply custom FOV after gameplay resumes
 
 ------------------------------------------------------------------------
 
-Modding Community
+# MODDING COMMUNITY
+
+Join the Phantom Menace reverse-engineering community:
 
 https://discord.gg/KX7R4quSQw
 
-Reverse engineers and contributors welcome.
+Goals:
+- engine research
+- reverse engineering
+- mod tool development
+- maps, textures and models
+- long-term preservation
+
+Reverse engineers and programmers welcome.
 
 ------------------------------------------------------------------------
 
-Source Code Status
+# SOURCE CODE STATUS
 
-Closed source during active reverse engineering. Planned for release
-once systems stabilise.
+Currently closed source.
+
+Reason:
+Active reverse engineering in progress.
+
+Source code will release once:
+- engine systems are fully mapped
+- patch framework stabilises
+- documentation is complete
 
 ------------------------------------------------------------------------
 
-Credits
+# CREDITS
 
 UCyborg — Legacy D3D Resolution Hack
+https://github.com/UCyborg/LegacyD3DResolutionHack
+
 ThirteenAG — Ultimate ASI Loader
-elishacloud — dxwrapper
+https://github.com/ThirteenAG/Ultimate-ASI-Loader
+
+elishacloud — DXWrapper
+https://github.com/elishacloud/dxwrapper
+
 kcat — DSOAL
+https://github.com/kcat/dsoal
+
 samuelgr — Xidi
+https://github.com/samuelgr/Xidi
 
-------------------------------------------------------------------------
+Chip — Reverse engineering, engine patching, preservation framework
+https://github.com/Chip-Biscuit
 
-Chip Reverse engineer • Programmer • Developer • Preservationist
+---
+
+### Project Direction & Integration
+
+Installer rebuild, engine research, patch integration, FOV system, FPS modifications, controller bindings, and modernisation framework:
+
+**Chip**
+“Creating compatibility fixes and enhancements for legacy PC games.”
+
+# Chip
+- reverse engineer
+- programmer
+- developer
+- Game Preservationist
+  
+<img width="250" height="500" alt="my logoo" src="https://github.com/user-attachments/assets/9bb13d3f-0734-4f1d-b68f-14114b13744a" />
