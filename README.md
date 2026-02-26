@@ -48,6 +48,16 @@ This patch:
 
 ------------------------------------------------------------------------
 
+# 64 bit installer
+
+if you are unable to install the game then it is HIGHLY recomended you use my custom 64 bit installer port everything is automated
+and it is by far the easiest method to install the game with all of the modern enhancements to get it running perfectly with the least effort required
+
+(64 bit installer)[https://github.com/Chip-Biscuit/Star-Wars-Episode-I-Phantom-Menace-PC-64bit-Installer]
+
+---
+
+
 # WHAT THIS PATCH DOES
 
 Core engine improvements:
