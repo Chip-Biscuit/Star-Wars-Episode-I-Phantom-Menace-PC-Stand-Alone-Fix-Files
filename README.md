@@ -186,12 +186,8 @@ IMPORTANT NOTES
 DXWrapper is considered part of the modern configuration
 for stable performance.
 
-dgVoodoo is NOT recommended:
-
-- introduces additional overhead
-- reduces performance
-- interferes with frame timing
-- negatively impacts 60 FPS stability
+dgVoodoo could also be used however it is up to the user from my tests elisha wrapper worked
+much better.
 
 ------------------------------------------------------------------------
 
