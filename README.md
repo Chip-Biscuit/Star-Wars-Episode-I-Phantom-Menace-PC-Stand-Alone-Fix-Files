@@ -186,8 +186,8 @@ IMPORTANT NOTES
 DXWrapper is considered part of the modern configuration
 for stable performance.
 
-dgVoodoo could also be used however it is up to the user from my tests elisha wrapper worked
-much better.
+dgVoodoo could be used in place of elisha wrapper however it is up to the user from my tests elisha wrapper worked
+much better. the two cannot be used in tandem and you must pick one or the other this is user preference but i will recomend the one that worked best in my personal testing.
 
 ------------------------------------------------------------------------
 
