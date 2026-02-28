@@ -186,8 +186,36 @@ IMPORTANT NOTES
 DXWrapper is considered part of the modern configuration
 for stable performance.
 
-dgVoodoo could be used in place of elisha wrapper however it is up to the user from my tests elisha wrapper worked
-much better. the two cannot be used in tandem and you must pick one or the other this is user preference but i will recomend the one that worked best in my personal testing.
+# Alternative Option: dgVoodoo2
+
+dgVoodoo2 is a widely used DirectX wrapper capable of translating older DirectX versions (including DirectX 7) to modern APIs such as DirectX 11 and many more options.
+
+Download:
+https://dege.freeweb.hu/dgVoodoo2/dgVoodoo2/
+
+Recommended version: dgVoodoo v2.86.5 (Regular usage build)
+
+dgVoodoo2 may work well for some systems and is a valid alternative to DXWrapper.
+
+It also does adress "could not initialize graphics hardware" on AMD graphics the same as DXWrapper.
+
+However, during my own testing:
+
+DXWrapper provided more stable frame pacing with the 60 FPS patch
+
+I encountered fewer rendering issues
+
+Because of this, the guide above is written specifically around DXWrapper. However the choice is entirely in the users hands.
+
+Important:
+
+Do not use dgVoodoo2 and DXWrapper together.
+
+Choose one wrapper only.
+
+If dgVoodoo works better on your system, feel free to use it.
+
+Performance may vary depending on GPU, driver version, and system configuration.
 
 ------------------------------------------------------------------------
 
