@@ -48,16 +48,54 @@ This patch:
 
 ------------------------------------------------------------------------
 
-# 64 bit installer
+# 64-Bit Installer (Recommended – Easiest Method)
 
-if you are unable to install the game then it is HIGHLY recomended you use my custom 64 bit installer port everything is automated
-and it is by far the easiest method to install the game with all of the modern enhancements to get it running perfectly with the least effort required
-as it does do things like setting DPI aware, changing some in game settings for controller and EAX depending on if you installed it and a few other automated things to make life easy
+**If you want the simplest and most reliable way to install the game on a modern system, I strongly recommend using my custom 64-bit installer.**
 
+The original 16-bit installer does not work on current versions of Windows. This installer replaces it completely and automates the entire setup process.
+
+1. Installation is straightforward:
+3. Mount the original game disc (or insert the CD).
+5. Run the installer.
+7. Choose your installation options.
+8. Set your desired resolution in obi.ini.
+9. Launch the game.
+10. That’s it.
+
+**No manual file copying, no registry edits, no compatibility tweaks.**
+
+The installer automatically:
+
+- Configures modern compatibility settings
+- Enables DPI awareness
+- Applies recommended in-game controller settings
+- Handles EAX configuration (if installed)
+- Applies additional stability adjustments
+- Prepares the game for modern resolutions and 60 FPS support
+
+The goal is to make the game install and run properly on Windows 10 and Windows 11 with minimal effort required.
+
+GitHub Repository:
 https://github.com/Chip-Biscuit/Star-Wars-Episode-I-Phantom-Menace-PC-64bit-Installer
 
----
+------------------------------------------------------------------------
 
+# MODDING COMMUNITY
+
+Join the Phantom Menace reverse-engineering community:
+
+https://discord.gg/KX7R4quSQw
+
+Goals:
+- engine research
+- reverse engineering
+- mod tool development
+- maps, textures and models
+- long-term preservation
+
+Reverse engineers and programmers welcome.
+
+---
 
 # WHAT THIS PATCH DOES
 
@@ -193,13 +231,13 @@ dgVoodoo2 is a widely used DirectX wrapper capable of translating older DirectX 
 Download:
 https://dege.freeweb.hu/dgVoodoo2/dgVoodoo2/
 
-Recommended version: dgVoodoo v2.86.5 (Regular usage build)
+**Recommended version: dgVoodoo v2.86.5 (Regular usage build)**
 
 dgVoodoo2 may work well for some systems and is a valid alternative to DXWrapper.
 
 It also does adress "could not initialize graphics hardware" on AMD graphics the same as DXWrapper.
 
-However, during my own testing:
+**However, during my own testing:**
 
 DXWrapper provided more stable frame pacing with the 60 FPS patch
 
@@ -207,11 +245,11 @@ I encountered fewer rendering issues
 
 Because of this, the guide above is written specifically around DXWrapper. However the choice is entirely in the users hands.
 
-Important:
+**Important:**
 
 Do not use dgVoodoo2 and DXWrapper together.
 
-Choose one wrapper only.
+**Choose one wrapper only.**
 
 If dgVoodoo works better on your system, feel free to use it.
 
@@ -307,16 +345,7 @@ DpadLeft            = Pov(Left)
 DpadRight           = Pov(Right)
 ```
 7. Save the file.
-8. Launch the game.
-
-# Controller Notes:
-
-- Start opens the in-game menu.
-- roll on right analogue stick as in the ps1 version
-- Back toggles FOV (mapped to F1).
-- If you change the FOV hotkey inside scripts/chip.ini,
-  you must update ButtonBack inside Xidi.ini to match.
-
+11. Launch the game.
 
 # FALLBACK METHOD (Some Systems)
 
@@ -341,6 +370,13 @@ It must remain 8 characters.
 6. Ensure winm2.dll and Xidi.ini are in the game directory.
 7. Launch game.
 
+# Controller Notes:
+
+- Start opens the in-game menu.
+- roll on right analogue stick as in the ps1 version
+- Back toggles FOV (mapped to F1).
+- If you change the FOV hotkey inside scripts/chip.ini,
+  you must update ButtonBack inside Xidi.ini to match.
 ------------------------------------------------------------------------
 
 # 7) Launching the Game
@@ -364,23 +400,6 @@ Before level transitions:
 - revert to original FOV
 - allow level load
 - reapply custom FOV after gameplay resumes
-
-------------------------------------------------------------------------
-
-# MODDING COMMUNITY
-
-Join the Phantom Menace reverse-engineering community:
-
-https://discord.gg/KX7R4quSQw
-
-Goals:
-- engine research
-- reverse engineering
-- mod tool development
-- maps, textures and models
-- long-term preservation
-
-Reverse engineers and programmers welcome.
 
 ------------------------------------------------------------------------
 
